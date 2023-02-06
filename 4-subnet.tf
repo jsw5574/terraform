@@ -1,12 +1,3 @@
-
-# Database Subnet Address Space
-variable "web_subnet_address" {
-  description = "Virtual Network web Subnet Address Spaces"
-  type = list(string)
-  default = ["22.23.100.0/24"]
-
-
-
 resource "azurerm_subnet" "web_subnet" {
     name                 = "${var.prefix}-subnet"
     resource_group_name  = azurerm_resource_group.rg.name
@@ -46,5 +37,3 @@ resource "azurerm_network_security_rule" "web_nsg_rule_inbound" {
     resource_group_name          = azurerm_resource_group.rg.name
     network_security_group_name  = azurerm_network_security_group.web_subnet_nsg.name
       }   
-}
-
