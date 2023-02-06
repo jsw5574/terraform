@@ -2,8 +2,8 @@
 # Database Subnet Address Space
 variable "web_subnet_address" {
   description = "Virtual Network web Subnet Address Spaces"
-  type = list(string)
-  default = ["22.23.100.0/24"]
+  type = string
+  default = "22.23.100.0/24"
 
 
 
