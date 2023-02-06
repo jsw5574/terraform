@@ -6,7 +6,7 @@ resource "azurerm_virtual_machine" "waf1" {
   location                = var.location
   resource_group_name     = azurerm_resource_group.rg.name
   vm_size                 = var.waf_vm_size
-  network_interface_ids   = [azurerm_network_interface]
+  network_interface_ids   = [ azurerm_network_interface.waf1_nic.id ]
 } 
   
 ### waf1-nic create ##
@@ -61,7 +61,7 @@ resource "azurerm_virtual_machine" "waf2" {
   location                = var.location
   resource_group_name     = azurerm_resource_group.rg.name
   vm_size                 = var.waf_vm_size
-  network_interface_ids   = [azurerm_network_interface]
+  network_interface_ids   = [azurerm_network_interface.waf2_nic.id ]
 } 
   
 ### waf2-nic create ##
