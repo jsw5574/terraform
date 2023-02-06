@@ -46,3 +46,11 @@ variable "admin_password" {
   default = "P@ssw0rd"
 }
 
+
+
+### VM Size ###
+
+variable "waf_vm_size" {
+  type = string
+  default = "Standard_D2sv5"
+}
