@@ -18,9 +18,5 @@ variable "location" {
 #### 3-virtual-network ###
 variable "address_space" {
     type = string
-    default = "22.23.0.0/16"
-}
-
-variable "subnet_names" {
-  
+    default = "[22.23.0.0/16]"
 }
