@@ -10,7 +10,7 @@ variable "prefix" {
 
 variable "location" {
     type = string
-    default = "KoreaCentral"
+    default = "KoreasSouth"
     description = "This is Location Name"
 }
 
@@ -39,3 +39,10 @@ variable "app_subnet_address" {
     type = list(string)
     default = ["22.23.100.0/24"]
 }
+
+### Create VM password ### 
+variable "admin_password" {
+  type = string
+  default = "P@ssw0rd"
+}
+
