@@ -10,7 +10,7 @@ variable "prefix" {
 
 variable "location" {
     type = string
-    default = "KoreasSouth"
+    default = "KoreaCentral"
     description = "This is Location Name"
 }
 
