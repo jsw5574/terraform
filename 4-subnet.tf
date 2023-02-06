@@ -1,8 +1,4 @@
-variable "web_subnet_name" {
-  description = "Virtual Network web Subnet Name"
-  type = string
-  default = "websubnet"
-}
+
 # Database Subnet Address Space
 variable "web_subnet_address" {
   description = "Virtual Network web Subnet Address Spaces"
