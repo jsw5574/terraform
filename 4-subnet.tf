@@ -1,7 +1,7 @@
 variable "web_subnet_name" {
   description = "Virtual Network web Subnet Name"
   type = string
-  default = "dbsubnet"
+  default = "websubnet"
 }
 # Database Subnet Address Space
 variable "web_subnet_address" {
@@ -19,7 +19,7 @@ resource "azurerm_subnet" "web_subnet" {
 }
 
 resource "azurerm_network_security_group" "web_subnet_nsg" {
-    name                = "${azurerm_subnet.websubnet.name}-nsg"
+    name                = "${azurerm_subnet.web_subnet.name}-nsg"
     location            = azurerm_resource_group.rg.location
     resource_group_name = azurerm_resource_group.rg.name
 }
@@ -35,7 +35,7 @@ locals {
     "110" : "443",
   }
 }
-
+dfdf
 resource "azurerm_network_security_rule" "web_nsg_rule_inbound" {
     for_each = local.web_inbound_ports_map
     name                         = "Allow-${each.value}"
