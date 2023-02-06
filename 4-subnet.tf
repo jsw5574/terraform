@@ -1,6 +1,7 @@
-resource "azurerm_subnet" "web_subnet" {
-    name                 = "${var.prefix}-subnet"
-    resource_group_name  = azurerm_resource_group.rg.name
-    virtual_network_name = azurerm_virtual_network.vnet.name
-    address_prefixs      = ["22.23.10.0/24"]
+
+resource "azurerm_subnet" "example" {
+  name                 = "example-subnet"
+  resource_group_name  = azurerm_resource_group.rg.name
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  address_prefixes     = ["22.23.50.0/24"]
 }
