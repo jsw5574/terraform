@@ -77,14 +77,6 @@ resource "azurerm_network_interface" "waf2_nic" {
       }
 }
 
-locals {
-  wafvm_custom_data = <<CUSTOM_DATA
-  #!bin/bash
-  sudo timedatectl set-timezone Asia/Seoul
-  
-  CUSTOM_DATA
-  }
-
 
 ### waf2-vm + nic + disk attach ##
 resource "azurerm_linux_virtual_machine" "waf2-vm" {
