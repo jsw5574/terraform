@@ -11,7 +11,7 @@ variable "prefix" {
 variable "location" {
     type = string
     default = "KoreaCentral"
-    dedescription = "This is Location Name"
+    description = "This is Location Name"
 }
 
 
