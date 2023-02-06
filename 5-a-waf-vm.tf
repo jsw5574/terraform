@@ -16,7 +16,7 @@ resource "azurerm_network_interface" "waf1_nic" {
 
   ip_configuration {
     name = "waf-nic"
-    subnet_id = azurerm_subnet.sec_subnet
+    subnet_id = azurerm_subnet.sec_subnet.id
     private_ip_address_allocation = "Dynamic"
       }
 }
