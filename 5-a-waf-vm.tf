@@ -1,13 +1,4 @@
 
-
-### create waf1-vm ##
-resource "azurerm_virtual_machine" "waf1" {
-  name                    = "${var.prefix}-waf1-vm"
-  location                = var.location
-  resource_group_name     = azurerm_resource_group.rg.name
-  vm_size                 = var.waf_vm_size
-  network_interface_ids   = [ azurerm_network_interface.waf1_nic.id ]
-} 
   
 ### waf1-nic create ##
 resource "azurerm_network_interface" "waf1_nic" {
@@ -54,15 +45,6 @@ resource "azurerm_linux_virtual_machine" "waf1-vm" {
 }
 
 
-
-### create waf2-vm ##
-resource "azurerm_virtual_machine" "waf2" {
-  name                    = "${var.prefix}-waf2-vm"
-  location                = var.location
-  resource_group_name     = azurerm_resource_group.rg.name
-  vm_size                 = var.waf_vm_size
-  network_interface_ids   = [azurerm_network_interface.waf2_nic.id ]
-} 
   
 ### waf2-nic create ##
 resource "azurerm_network_interface" "waf2_nic" {
