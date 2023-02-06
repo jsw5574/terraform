@@ -4,7 +4,7 @@
 
 variable "prefix" {
   type = string
-  default = "swjeong"
+  default = "bv"
   description = "This is prefix name"
 }
 

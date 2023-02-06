@@ -4,4 +4,3 @@ resource "azurerm_subnet" "web_subnet" {
     virtual_network_name = azurerm_virtual_network.vnet.name
     address_prefixs      = ["22.23.10.0/24"]
 }
-
