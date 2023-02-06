@@ -7,7 +7,7 @@ resource "azurerm_subnet" "was_subnet" {
 }
 
 
-resource "azurerm_network_security_group" "was-subnet-nsg" {
+resource "azurerm_network_security_group" "was_subnet_nsg" {
     name                = "${azurerm_subnet.was_subnet.name}-nsg"
     location            = azurerm_resource_group.rg.location
     resource_group_name = azurerm_resource_group.rg.name

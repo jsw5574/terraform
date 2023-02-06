@@ -23,7 +23,7 @@ variable "vnet_address_space" {
 
 
 #### 4-subnet address ###
-variable "web_subnet_address" {
+variable "was_subnet_address" {
     type = list(string)
     default = ["22.23.100.0/24"]
 }
