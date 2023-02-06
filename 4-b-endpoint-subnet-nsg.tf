@@ -23,8 +23,7 @@ resource "azurerm_subnet_network_security_group_association" "endpoint_subnet_ns
 
 locals {
   endpoint_inbound_ports_map = {
-    "100" : "80",
-    "110" : "443",
+
   }
 }
 

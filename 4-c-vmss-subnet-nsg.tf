@@ -23,8 +23,7 @@ resource "azurerm_subnet_network_security_group_association" "vmss_subnet_nsg_as
 
 locals {
   vmss_inbound_ports_map = {
-    "100" : "80",
-    "110" : "443",
+
   }
 }
 
