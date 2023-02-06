@@ -35,7 +35,7 @@ locals {
     "110" : "443",
   }
 }
-dfdf
+
 resource "azurerm_network_security_rule" "web_nsg_rule_inbound" {
     for_each = local.web_inbound_ports_map
     name                         = "Allow-${each.value}"
