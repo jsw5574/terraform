@@ -32,14 +32,14 @@ resource "azurerm_lb_probe" "vmss_probe" {
 ## LB RULE ##
 
 resource "azurerm_lb_rule" "vmss_rule" {
-    name                    = "vmss-rule"
-    protocol                = "tcp"
-    frontend_port           = 8010
-    backend_port            = 8010
+    name                           = "vmss-rule"
+    protocol                       = "tcp"
+    frontend_port                  = 8010
+    backend_port                   = 8010
     frontend_ip_configuration_name = azurerm_lb.vmss_lb.frontend_ip_configuration[0].name
-    backbackend_address_pool_ids = azurerm_lb_backend_address_pool.app_lb_backend_address_pool.id
-    probe_id                     = azurerm_lb_probe.vmss_probe.id
-    loadbalancer_id              = azurerm_lb.vmss_lb.id
-    resource_group_name          = azurerm_resource_group.rg.name   
+    backend_address_pool_ids       = azurerm_lb_backend_address_pool.app_lb_backend_address_pool.id
+    probe_id                       = azurerm_lb_probe.vmss_probe.id
+    loadbalancer_id                = azurerm_lb.vmss_lb.id
+    resource_group_name            = azurerm_resource_group.rg.name   
 }
 
