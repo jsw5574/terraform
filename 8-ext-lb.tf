@@ -66,7 +66,18 @@ resource "azurerm_lb_rule" "rule_443" {
 
 # Resource-6: Associate Network Interface and Standard Load Balancer
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface_backend_address_pool_association
-resource "azurerm_network_interface_backend_address_pool_association" "web_nic_lb_associate" {
-  network_interface_id    = azurerm_network_interface.web_linuxvm_nic.id
-  ip_configuration_name   = azurerm_network_interface.web_linuxvm_nic.ip_configuration[0].name
-  backend_address_pool_id = azurerm_lb_backend_address_pool.web_lb_backend_address_pool.id
+resource "azurerm_network_interface_backend_address_pool_association" "waf1_nic_associate" {
+  network_interface_id    = azurerm_network_interface.waf1_nic.id
+  ip_configuration_name   = azurerm_network_interface.waf1_nic.ip_configuration[0].name
+  backend_address_pool_id = azurerm_lb_backend_address_pool.ext_lb.id
+}
+
+resource "azurerm_network_interface_backend_address_pool_association" "waf2_nic_associate" {
+  network_interface_id    = azurerm_network_interface.waf2_nic.id
+  ip_configuration_name   = azurerm_network_interface.waf2_nic.ip_configuration[0].name
+  backend_address_pool_id = azurerm_lb_backend_address_pool.ext_lb.id
+}
+
+
+
+
