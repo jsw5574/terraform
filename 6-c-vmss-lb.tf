@@ -22,7 +22,7 @@ resource "azurerm_lb_backend_address_pool" "backendpool" {
 ## Health Probe ##
 resource "azurerm_lb_probe" "vmss_probe" {
   name                      = "vmss-probe"
-  protocal                  = "tcp"
+  protocol                  = "tcp"
   port                      = 80
   loadbalancer_id           = azurerm_lb.vmss_lb.id
   resource_group_name       = azurerm_resource_group.rg.name

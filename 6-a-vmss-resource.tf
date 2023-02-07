@@ -12,7 +12,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "vmss" {
     name = "${var.prefix}-vmss"
     computer_name_prefix = "${var.prefix}-vmss"
     resource_group_name = azurerm_resource_group.rg.name
-    location = azurerm_resource_group.location.name
+    location = azurerm_resource_group.rg.location
     sku = "Standard_B2S"
     instances = 2
     admin_username = "wjadmin"
