@@ -13,7 +13,7 @@ resource "azurerm_linux_virtual_machine_scale_set" "vmss" {
     computer_name_prefix = "${var.prefix}-vmss"
     resource_group_name = azurerm_resource_group.rg.name
     location = azurerm_resource_group.rg.location
-    sku = "Standard_B2S"
+    sku = "Standard_D2sv5"
     instances = 2
     admin_username = "wjadmin"
     admin_password = "${var.admin_password}"
@@ -28,8 +28,8 @@ source_image_reference {
     }
 
 os_disk {
-    storage_account_type = "Premium_ZRS"
-    caching              = "ReadWrite"
+    storage_account_type   = "Premium_ZRS"
+    caching                = "ReadWrite"
 }
 
 upgrade_mode = "Automatic"
