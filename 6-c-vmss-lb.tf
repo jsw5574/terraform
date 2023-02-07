@@ -36,14 +36,14 @@ resource "azurerm_lb_rule" "vmss_rule" {
     protocol                       = "tcp"
     frontend_port                  = 8010
     backend_port                   = 8010
-    frontend_ip_configuration_name = azurerm_lb.vmss_lb.frontend_ip_configuration[0].name
-    backend_address_pool_ids       = azurerm_lb_backend_address_pool.backendpool.id
+    frontend_ip_configuration_name = azurerm_lb.vmss_lb.frontend_ip_configuration.name
+    backend_address_pool_ids       = [ azurerm_lb_backend_address_pool.backendpool.id ]
     probe_id                       = azurerm_lb_probe.vmss_probe.id
     loadbalancer_id                = azurerm_lb.vmss_lb.id
     resource_group_name            = azurerm_resource_group.rg.name   
 }
 
-
+/*
 # Resource-6: Associate Network Interface and Standard Load Balancer
 # https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface_backend_address_pool_association
 resource "azurerm_network_interface_backend_address_pool_association" "vmss_associate" {
@@ -51,3 +51,4 @@ resource "azurerm_network_interface_backend_address_pool_association" "vmss_asso
   ip_configuration_name   = azurerm_network_interface.app_linuxvm_nic.ip_configuration[0].name
   backend_address_pool_id = azurerm_lb_backend_address_pool.app_lb_backend_address_pool[*].id
 }
+*/
