@@ -36,7 +36,7 @@ resource "azurerm_lb_rule" "vmss_rule" {
     protocol                       = "tcp"
     frontend_port                  = 8010
     backend_port                   = 8010
-    frontend_ip_configuration_name = azurerm_lb.vmss_lb.frontend_ip_configuration.name
+    frontend_ip_configuration_name = azurerm_lb.vmss_lb.frontend_ip_configuration[0].name
     backend_address_pool_ids       = [ azurerm_lb_backend_address_pool.backendpool.id ]
     probe_id                       = azurerm_lb_probe.vmss_probe.id
     loadbalancer_id                = azurerm_lb.vmss_lb.id
