@@ -39,6 +39,10 @@ variable "app_subnet_address" {
     type = list(string)
     default = ["22.23.100.0/24"]
 }
+variable "apgw-subnet_address" {
+    type = list(string)
+    default = [ "22.23.0.0/24" ]
+}
 
 ### Create VM password ### 
 variable "admin_password" {
