@@ -43,3 +43,11 @@ resource "azurerm_lb_rule" "vmss_rule" {
     resource_group_name            = azurerm_resource_group.rg.name   
 }
 
+
+# Resource-6: Associate Network Interface and Standard Load Balancer
+# https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface_backend_address_pool_association
+resource "azurerm_network_interface_backend_address_pool_association" "vmss_associate" {
+  network_interface_id    = azurerm_network_interface.app_linuxvm_nic.id
+  ip_configuration_name   = azurerm_network_interface.app_linuxvm_nic.ip_configuration[0].name
+  backend_address_pool_id = azurerm_lb_backend_address_pool.app_lb_backend_address_pool[*].id
+}
