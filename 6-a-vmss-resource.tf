@@ -28,7 +28,7 @@ source_image_reference {
     }
 
 os_disk {
-    storage_account_type   = "Premium_ZRS"
+    storage_account_type   = "Premium_LRS"
     caching                = "ReadWrite"
 }
 
