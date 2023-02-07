@@ -54,3 +54,8 @@ variable "waf_vm_size" {
   type = string
   default = "Standard_D2sv5"
 }
+
+variable "custom_email" {
+  type = list(string)
+  default = ["swjeong.woongjin.co.kr"]
+}
