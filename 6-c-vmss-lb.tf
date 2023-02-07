@@ -1,14 +1,14 @@
 resource "azurerm_lb" "vmss_lb" {
-    name            = "${var.prefix}-vmss-lb"
-    resouresource_group_name = azurerm_resource_group.rg.name
-    location                 = azurerm_resource_group.rg.location
-    sku                      = "Standard"
+    name                             = "${var.prefix}-vmss-lb"
+    resource_group_name              = azurerm_resource_group.rg.name
+    location                         = azurerm_resource_group.rg.location
+    sku                              = "Standard"
     frontend_ip_configuration {
-      name                   = "bv-vmss-lb-nic"
-      subnet_id              = azurerm_subnet.vmss_subnet.id
-      private_ip_address_allocation = "static"
-      private_ip_address_version    = "IPv4"
-      prevatprivate_ip_address      = "22.23.30.10" 
+      name                           = "bv-vmss-lb-nic"
+      subnet_id                      = azurerm_subnet.vmss_subnet.id
+      private_ip_address_allocation  = "static"
+      private_ip_address_version     = "IPv4"
+      private_ip_address             = "22.23.30.10" 
     }           
 }
 
@@ -20,7 +20,7 @@ resource "azurerm_lb_backend_address_pool" "backendpool" {
 }
 
 ## Health Probe ##
-resource "azurerm_lb_pro" "vmss_probe" {
+resource "azurerm_lb_probe" "vmss_probe" {
   name                      = "vmss-probe"
   protocal                  = "tcp"
   port                      = 80

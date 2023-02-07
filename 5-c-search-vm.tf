@@ -28,8 +28,8 @@ resource "azurerm_linux_virtual_machine" "search1-vm" {
     resource_group_name = azurerm_resource_group.rg.name
     location = var.location
     size = "Standard_D2sv5"
-    search_username = "wjadmin"
-    search_password = "${var.search_password}"
+    admin_username = "wjadmin"
+    admin_password = "${var.admin_password}"
     network_interface_ids = [ azurerm_network_interface.search1_nic.id ]
     os_disk {
       caching = "ReadWrite"
@@ -66,8 +66,8 @@ resource "azurerm_linux_virtual_machine" "search2-vm" {
     resource_group_name = azurerm_resource_group.rg.name
     location = var.location
     size = "Standard_D2sv5"
-    search_username = "wjadmin"
-    search_password = "${var.search_password}"
+    admin_username = "wjadmin"
+    admin_password = "${var.admin_password}"
     network_interface_ids = [ azurerm_network_interface.search2_nic.id ]
     os_disk {
       caching = "ReadWrite"

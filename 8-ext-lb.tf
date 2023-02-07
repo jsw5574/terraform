@@ -29,7 +29,7 @@ resource "azurerm_lb_backend_address_pool" "ext_lb" {
 
 # Heatl Probe #
 
-resource "azurerm_lb_pobe" "ext_probe" {
+resource "azurerm_lb_probe" "ext_probe" {
     name = "ext-lb-probe-222"
     protocol = "TCP"
     port = 222
