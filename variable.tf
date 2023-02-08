@@ -63,3 +63,15 @@ variable "custom_email" {
   type = list(string)
   default = ["swjeong.woongjin.co.kr"]
 }
+
+
+variable "http_hostnames" {
+  type = list(string)
+  default = [ "swjeong1.wjmcs.com", "swjeong2.wjmcs.com" ]
+}
+
+variable "https_hostnames" {
+  type = list(string)
+  default = [ "swjeong1.wjmcs.com" , "swjeong2.wjmcs.com"]
+  
+}
