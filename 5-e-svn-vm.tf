@@ -26,6 +26,7 @@ locals {
 resource "azurerm_linux_virtual_machine" "svn-vm" {
     name = "${var.prefix}-vm"
     resource_group_name = azurerm_resource_group.rg.name
+    zone = 1
     location = var.location
     size = "Standard_D2sv5"
     admin_username = "wjadmin"

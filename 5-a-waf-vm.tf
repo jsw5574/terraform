@@ -28,6 +28,7 @@ resource "azurerm_linux_virtual_machine" "waf1-vm" {
     resource_group_name = azurerm_resource_group.rg.name
     location = var.location
     size = "Standard_D2sv5"
+    zone = 1
     admin_username = "wjadmin"
     admin_password = "${var.admin_password}"
     network_interface_ids = [ azurerm_network_interface.waf1_nic.id ]
@@ -65,6 +66,7 @@ resource "azurerm_linux_virtual_machine" "waf2-vm" {
     name = "${var.prefix}-vm"
     resource_group_name = azurerm_resource_group.rg.name
     location = var.location
+    zone = 2
     size = "Standard_D2sv5"
     admin_username = "wjadmin"
     admin_password = "${var.admin_password}"

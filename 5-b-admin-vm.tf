@@ -27,6 +27,7 @@ resource "azurerm_linux_virtual_machine" "admin1-vm" {
     name = "${var.prefix}-vm"
     resource_group_name = azurerm_resource_group.rg.name
     location = var.location
+    zone = 1
     size = "Standard_D2sv5"
     admin_username = "wjadmin"
     admin_password = "${var.admin_password}"
@@ -65,6 +66,7 @@ resource "azurerm_linux_virtual_machine" "admin2-vm" {
     name = "${var.prefix}-vm"
     resource_group_name = azurerm_resource_group.rg.name
     location = var.location
+    zone = 2
     size = "Standard_D2sv5"
     admin_username = "wjadmin"
     admin_password = "${var.admin_password}"

@@ -27,6 +27,7 @@ resource "azurerm_linux_virtual_machine" "search1-vm" {
     name = "${var.prefix}-vm"
     resource_group_name = azurerm_resource_group.rg.name
     location = var.location
+    zone = 1
     size = "Standard_D2sv5"
     admin_username = "wjadmin"
     admin_password = "${var.admin_password}"
@@ -64,6 +65,7 @@ resource "azurerm_network_interface" "search2_nic" {
 resource "azurerm_linux_virtual_machine" "search2-vm" {
     name = "${var.prefix}-vm"
     resource_group_name = azurerm_resource_group.rg.name
+    zone = 2
     location = var.location
     size = "Standard_D2sv5"
     admin_username = "wjadmin"
